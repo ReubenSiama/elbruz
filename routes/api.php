@@ -1,10 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserDetailController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,17 @@ Route::middleware(['auth:api'])->group(function(){
     Route::get('/logout', [AuthController::class, 'logout']);
 
     // Item
-    Route::get('/items', [ItemController::class, 'getItems']);
+    Route::get('/items', [ItemController::class, 'getItem']);
     Route::post('/add-item', [ItemController::class, 'addItem']);
+    Route::get('/customer-get-items', [CustomerController::class, 'getItems']);
+    Route::get('/get-single-item/{id}', [CustomerController::class, 'getSingleItem']);
+
+    // Category
+    Route::get('/get-categories', [CategoryController::class, 'getCategories']);
+
+    // Cart
+    Route::post('/add-item-to-cart', [CustomerController::class, 'addCart']);
+
+    // User
+    Route::get('/get-my-detail', [CustomerController::class, 'getDetail']);
 });

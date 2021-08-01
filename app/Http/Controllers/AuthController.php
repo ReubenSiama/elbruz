@@ -30,7 +30,7 @@ class AuthController extends Controller
         }
     }
 
-    public function register(UserRequest $request): array
+    public function register(UserRequest $request)
     {
         $data['user'] = $this->modelStoreUser($request, model: $this->user);
 

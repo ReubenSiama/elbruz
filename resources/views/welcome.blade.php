@@ -15,7 +15,7 @@
     <a href=""><img height="80" src="playstore.png" alt=""></a>
   </h3>
   <footer class="footer">
-    <small>All rights reserved © {{ date('Y') }} <a href="/">Elbruz</a></small>
+    <small>All rights reserved © {{ date('Y') }} <a href="/test">Elbruz</a></small>
     <br>
     <small>Designed and developed by BenzCraft</small>
   </footer>

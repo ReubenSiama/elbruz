@@ -19,7 +19,7 @@ class UserDetailController extends Controller
     public function addAddress(UserDetailRequest $request)
     {
         $request->merge(['user_id' => Auth::user()->id]);
-        $data['user_detail'] = $this->modelStoreUser($request, model: $this->userDetail);
+        $data['user_detail'] = $this->modelStore($request, model: $this->userDetail);
         return response()->json(['success'=>'Address Added']);
     }
 }
