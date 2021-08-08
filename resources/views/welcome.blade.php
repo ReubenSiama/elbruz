@@ -29,8 +29,9 @@
   body{
     margin-left: 43rem;
     margin-top: 10rem;
-    background-image: url('background.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('background.jpg');
   }
   .footer {
     position: fixed;
@@ -41,6 +42,18 @@
   .container{
     display: flex;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 950px){
+    body{
+      margin-left: 1rem;
+      margin-top: 1rem;
+      background-size: cover;
+      background: url('mobile.jpg');
+    }
+    h1,h3{
+      color: white;
+    }
   }
 </style>
 </html>
