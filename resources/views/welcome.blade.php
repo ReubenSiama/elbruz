@@ -12,7 +12,12 @@
   <h3>
     Mizo-te tan, thei leh thlai hrisel tha zawrhna Elbruz hi a hnuaia link atang hian lo download la, lo hrisel zel ang che.
     <br>
-    <a href=""><img height="80" src="playstore.png" alt=""></a>
+    <br>
+    <div class="container">
+      <div class="child">
+        <a href="/Elbruz.apk"><img height="80" src="download.png" alt=""></a>
+      </div>
+    </div>
   </h3>
   <footer class="footer">
     <small>All rights reserved © {{ date('Y') }} <a href="/test">Elbruz</a></small>
@@ -32,6 +37,10 @@
     bottom: 10px;
     width: 100%;
     color: black;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
   }
 </style>
 </html>
