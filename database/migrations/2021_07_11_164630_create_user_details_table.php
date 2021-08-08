@@ -15,6 +15,7 @@ class CreateUserDetailsTable extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
+            $table->boolean('primary')->default(1);
             $table->integer('user_id');
             $table->string('contact');
             $table->string('locality')->nullable();

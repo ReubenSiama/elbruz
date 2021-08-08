@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserDetailController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -41,7 +42,23 @@ Route::middleware(['auth:api'])->group(function(){
 
     // Cart
     Route::post('/add-item-to-cart', [CustomerController::class, 'addCart']);
-
+    Route::get('/get-cart', [CustomerController::class, 'getCart']);
+    Route::get('/remove-cart/{id}', [CustomerController::class, 'removeCart']);
+    Route::post('/change-quantity/{id}', [CustomerController::class, 'changeQuantity']);
+    
     // User
     Route::get('/get-my-detail', [CustomerController::class, 'getDetail']);
+    Route::get('/change-to-default/{id}', [CustomerController::class, 'changeAddressDefault']);
+    Route::get('/get-user-data', [CustomerController::class, 'getUserData']);
+    Route::get('/get-my-profile', [UserDetailController::class, 'getMyProfile']);
+    Route::post('/update-profile', [UserDetailController::class, 'updateProfile']);
+
+    // order
+    Route::get('/update-order', [CustomerController::class, 'updateOrder']);
+    Route::get('/get-my-orders', [CustomerController::class, 'getMyOrders']);
+    Route::post('/cancel-order', [CustomerController::class, 'cancelOrder']);
+
+    Route::get('/get-admin-orders', [AdminController::class, 'getOrders']);
+    Route::post('/admin-update-order', [AdminController::class, 'updateOrder']);
+    Route::get('/get-admin-data', [AdminController::class, 'adminDashboard']);
 });

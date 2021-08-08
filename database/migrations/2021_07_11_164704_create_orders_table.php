@@ -16,11 +16,11 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('item_id');
             $table->string('total_price');
-            $table->date('order_date');
+            $table->string('order_date');
             $table->string('discount')->nullable();
-            $table->enum('status', ['Placed', 'Dispatched', 'Completed', 'Cancelled', 'Returned', 'Refunded'])->default('Placed');
+            $table->integer('user_detail_id');
+            $table->enum('status', ['Placed', 'Processing', 'Dispatched', 'Completed', 'Cancelled', 'Returned', 'Refunded'])->default('Placed');
             $table->timestamps();
         });
     }
