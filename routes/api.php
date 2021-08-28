@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -39,6 +40,8 @@ Route::middleware(['auth:api'])->group(function(){
 
     // Category
     Route::get('/get-categories', [CategoryController::class, 'getCategories']);
+    Route::post('/add-category', [CategoryController::class, 'addCategory']);
+    Route::post('/update-category/{id}', [CategoryController::class, 'updateCategory']);
 
     // Cart
     Route::post('/add-item-to-cart', [CustomerController::class, 'addCart']);
@@ -61,4 +64,9 @@ Route::middleware(['auth:api'])->group(function(){
     Route::get('/get-admin-orders', [AdminController::class, 'getOrders']);
     Route::post('/admin-update-order', [AdminController::class, 'updateOrder']);
     Route::get('/get-admin-data', [AdminController::class, 'adminDashboard']);
+
+    // Unit
+    Route::get('/get-units', [UnitController::class, 'getUnits']);
+    Route::post('/add-unit', [UnitController::class, 'addUnit']);
+    Route::post('/update-unit/{id}', [UnitController::class, 'updateUnit']);
 });

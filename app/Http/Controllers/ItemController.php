@@ -17,7 +17,11 @@ class ItemController extends Controller
 
   public function getItem(Request $request)
   {
-    $items = Item::where('item_name', 'LIKE', '%'.$request->q.'%')->get();
+    if($request->category){
+      $items = Item::where('item_name', 'LIKE', '%'.$request->q.'%')->where('category_id',$request->category)->get();
+    }else{
+      $items = Item::where('item_name', 'LIKE', '%'.$request->q.'%')->get();
+    }
     return response()->json(['items'=>$items]);
   }
 

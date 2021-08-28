@@ -16,6 +16,7 @@ class Item extends Model
     'measurement',
     'background_color',
     'description',
+    'shipping_fee',
   ];
 
   protected $with =[
