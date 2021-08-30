@@ -15,12 +15,12 @@
     <br>
     <div class="container">
       <div class="child">
-        <a href="/Elbruz.apk"><img height="80" src="download.png" alt=""></a>
+        <a href="https://play.google.com/store/apps/details?id=com.elbruz.elbruz"><img height="80" src="playstore.png" alt=""></a>
       </div>
     </div>
   </h3>
   <footer class="footer">
-    <small>All rights reserved © {{ date('Y') }} <a href="/test">Elbruz</a></small>
+    <small>All rights reserved © {{ date('Y') }} Elbruz</small>
     <br>
     <small>Designed and developed by BenzCraft</small>
   </footer>
