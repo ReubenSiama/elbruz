@@ -22,6 +22,10 @@
   <footer class="footer">
     <small>All rights reserved © {{ date('Y') }} Elbruz</small>
     <br>
+    <small>
+      By using our app you agree to our <a href="/privacy-policy">Privacy Policy</a>
+    </small>
+    <br>
     <small>Designed and developed by BenzCraft</small>
   </footer>
 </body>
